@@ -154,6 +154,11 @@ MIIO_TO_MIOT_SPECS = {
             'prop.2.3': {'prop': 'temperature'},
             'prop.2.4': {'prop': 'co2'},
             'prop.2.5': {'prop': 'tvoc'},
+            'prop.3.1': {'prop': 'battery'},
+            'prop.3.2': {'prop': 'charging_state', 'dict': {
+                'on':  1,  # Charging
+                'off': 2,  # Not Charging
+            }, 'default': 2},
         },
     },
 
