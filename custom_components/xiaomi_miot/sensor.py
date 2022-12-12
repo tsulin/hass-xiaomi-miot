@@ -96,7 +96,7 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
                 if not srv.get_property('operation_method', 'operation_id'):
                     continue
             elif srv.name in ['battery']:
-                if spec.name not in ['switch_sensor', 'toothbrush']:
+                if spec.name not in ['switch_sensor', 'toothbrush', 'temperature_humidity_sensor']:
                     continue
             elif srv.name in ['environment']:
                 if spec.name not in ['air_monitor']:
