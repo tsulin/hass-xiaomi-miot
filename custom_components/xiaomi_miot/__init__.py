@@ -2368,6 +2368,8 @@ class BaseSubEntity(BaseEntity):
                     self._attr_state = round(float(self._attr_state) * svd, 3)
                 except (TypeError, ValueError):
                     pass
+                off = self.custom_config_number('value_offset') or 0
+                self._attr_state = self._attr_state + off
         keys = self._option.get('keys', [])
         if isinstance(keys, list) and self._attr not in keys:
             keys.append(self._attr)

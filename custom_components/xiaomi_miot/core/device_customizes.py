@@ -621,7 +621,7 @@ DEVICE_CUSTOMIZES = {
     },
 
     'roborock.vacuum.*': {
-        'sensor_attributes': 'props:clean_area,props:clean_time,brush_life_level',
+        'sensor_attributes': 'props:clean_area,props:clean_time,brush_life_level,props:sensor_dirty_time,props:filter_work_time,props:main_brush_work_time,props:side_brush_work_time',
         'sensor_properties': 'vacuum.status',
         'select_properties': 'water_level,mop_mode',
     },
@@ -633,6 +633,27 @@ DEVICE_CUSTOMIZES = {
         'value_ratio': 0.016666,
         'unit_of_measurement': 'min',
     },
+    'roborock.vacuum.*:props:sensor_dirty_time': {
+        'value_ratio': -0.000925925925925926,
+        'unit_of_measurement': '%',
+        'value_offset' : 100,
+    },
+    'roborock.vacuum.*:props:filter_work_time': {
+        'value_ratio': -0.000185185185185185,
+        'unit_of_measurement': '%',
+        'value_offset' : 100,
+    },
+    'roborock.vacuum.*:props:main_brush_work_time': {
+        'value_ratio': -0.0000925925925925926,
+        'unit_of_measurement': '%',
+        'value_offset' : 100,
+    },
+    'roborock.vacuum.*:props:side_brush_work_time': {
+        'value_ratio': -0.000138888888888889,
+        'unit_of_measurement': '%',
+        'value_offset' : 100,
+    },
+
     'rockrobo.vacuum.*': {
         'sensor_attributes': 'props:clean_area,props:clean_time',
         'sensor_properties': 'vacuum.status',

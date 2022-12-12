@@ -158,6 +158,8 @@ class Miio2MiotHelper:
 
                         elif r := c.get('value_ratio'):
                             val = round(float(val) * float(r), 3)
+                            if r := c.get('value_offset'):
+                                val = val + r
 
                         elif prop.format in ['float']:
                             val = round(float(val), 4)
